@@ -22,3 +22,13 @@ Welcome to **GrowthSpark** – a clean and modern landing page designed to showc
 
 ## 📂 Folder Structure
 
+growthspark-landing-page/ │ ├── index.html ├── style.css ├── script.js (if needed) ├── assets/ │ └── images/ └── README.md
+## 🌐 Live Demo
+
+[View Live](https://yourusername.github.io/growthspark-landing-page/)
+
+## 📌 Setup
+
+1. Clone the repo:
+```bash
+git clone https://github.com/yourusername/growthspark-landing-page.git
