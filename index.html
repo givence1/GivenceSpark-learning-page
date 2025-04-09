@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GrowthSpark - Digital Marketing Agency</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: #0f172a;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f') no-repeat center center/cover;
+      height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero .btn {
+      background: #0f172a;
+      color: white;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .hero .btn:hover {
+      background: #1e293b;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .about, .services, .testimonials, .contact, .why-choose, footer {
+      text-align: center;
+    }
+
+    .services .cards, .why-choose .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: #f1f5f9;
+      padding: 2rem;
+      border-radius: 1rem;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .testimonials-carousel {
+      display: flex;
+      overflow-x: hidden;
+      gap: 2rem;
+      padding-top: 2rem;
+      scroll-behavior: smooth;
+    }
+
+    .testimonial {
+      background: #e2e8f0;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      width: 300px;
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      animation: slideIn 10s linear infinite;
+    }
+
+    .testimonial img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    @keyframes slideIn {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .contact input, .contact textarea {
+      padding: 0.75rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 0.5rem;
+    }
+
+    .contact button {
+      background: #0f172a;
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #0f172a;
+      color: white;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    .social-icons {
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      nav ul {
+        flex-direction: column;
+        display: none;
+        background: #0f172a;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 1rem;
+        border-radius: 10px;
+      }
+
+      nav.active ul {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>GivenceSpark</h1>
+    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+      <i class="fas fa-bars"></i>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why-choose">Why Choose Us</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="hero" data-aos="fade-in">
+    <h2>Ignite Your Brand’s Growth Online</h2>
+    <p>We help businesses grow through result-driven digital marketing strategies.</p>
+    <button class="btn">Get Started</button>
+  </section>
+
+  <section class="about" id="about" data-aos="fade-up">
+    <h2>Who We Are</h2>
+    <p>GivenceSpark is a digital marketing agency focused on helping brands boost their online presence and grow sales through modern marketing techniques.</p>
+  </section>
+
+  <section class="services" id="services" data-aos="fade-up">
+    <h2>Our Services</h2>
+    <div class="cards">
+      <div class="card" data-aos="zoom-in">
+        <i class="fas fa-search"></i>
+        <h3>SEO Optimization</h3>
+        <p>Increase visibility on search engines with expert SEO services.</p>
+      </div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="100">
+        <i class="fas fa-bullhorn"></i>
+        <h3>Social Media Management</h3>
+        <p>Engage your audience across platforms like Facebook, Instagram, and LinkedIn.</p>
+      </div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="200">
+        <i class="fas fa-chart-line"></i>
+        <h3>Analytics & Reports</h3>
+        <p>Track performance and make data-driven decisions for better ROI.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-choose" id="why-choose" data-aos="fade-up">
+    <h2>Why Choose Us</h2>
+    <div class="cards">
+      <div class="card" data-aos="zoom-in">
+        <i class="fas fa-lightbulb"></i>
+        <h3>Innovative Strategies</h3>
+        <p>We bring fresh, creative strategies tailored to your brand’s growth.</p>
+      </div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="100">
+        <i class="fas fa-users"></i>
+        <h3>Dedicated Team</h3>
+        <p>Our team of experts is committed to your success every step of the way.</p>
+      </div>
+      <div class="card" data-aos="zoom-in" data-aos-delay="200">
+        <i class="fas fa-clock"></i>
+        <h3>Timely Delivery</h3>
+        <p>We ensure all projects are completed efficiently and on time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials" data-aos="fade-up">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonials-carousel">
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/women/92.jpg" alt="Givence">
+        <p>“GivenceSpark boosted our website traffic by 300%! They are true professionals.” – Givence, CEO of GivAx</p>
+      </div>
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/women/36.jpg" alt="Engineer">
+        <p>“Absolutely thrilled with the results. Our brand visibility is higher than ever!” – Org Engineer, CEO of weekly challenge </p>
+      </div>
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/women/36.jpg" alt="Engineer">
+        <p>“Absolutely thrilled with the results. Our brand visibility is higher than ever!” – Org Engineer, CEO of weekly challenge </p>
+      </div>
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/women/36.jpg" alt="Engineer">
+        <p>“Absolutely thrilled with the results. Our brand visibility is higher than ever!” – Org Engineer, CEO of weekly challenge </p>
+      </div>
+    </div>
+</section>
+
+  <section class="contact" id="contact" data-aos="fade-up">
+    <h2>Contact Us</h2>
+    <form onsubmit="return validateForm()">
+      <input type="text" placeholder="Your Name" id="name" required>
+      <input type="email" placeholder="Your Email" id="email" required>
+      <textarea placeholder="Your Message" rows="5" id="message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 GrowthSpark. All Rights Reserved.</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+    function validateForm() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        alert("Please fill out all fields.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+
+</html>
